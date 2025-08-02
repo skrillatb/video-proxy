@@ -42,11 +42,12 @@ func MP4(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if rangeHeader := r.Header.Get("Range"); rangeHeader != "" {
+	rangeHeader := r.Header.Get("Range")
+	if rangeHeader != "" {
 		req.Header.Set("Range", rangeHeader)
+	} else {
+		req.Header.Set("Range", "bytes=0-1048575")
 	}
-	// req.Header.Set("User-Agent", r.UserAgent()) 
-
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
