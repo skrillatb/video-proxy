@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"vproxy/handlers"
+	"vproxy/utils"
 
 	"github.com/joho/godotenv"
 )
@@ -95,8 +96,10 @@ func main() {
 			w.WriteHeader(http.StatusNoContent)
 			return
 		}
+		utils.LogRequest(r, "→ Requête /video avec url="+r.URL.Query().Get("url"))
 		handlers.MP4(w, r)
 	})
+
 	
 	http.HandleFunc("/uqload", func(w http.ResponseWriter, r *http.Request) {
 		if !setCORSHeaders(w, r) {
@@ -107,6 +110,7 @@ func main() {
 			w.WriteHeader(http.StatusNoContent)
 			return
 		}
+		utils.LogRequest(r, "→ Requête /uqload avec url="+r.URL.Query().Get("url"))
 		handlers.UqloadHandler(w, r)
 	})
 	
