@@ -7,7 +7,7 @@ Installer Go et Nginx si nécessaire.
 Si les ressources sont insuffisantes, prendre un autre VPS du même type et répartir le trafic entre les deux.
 
 Proxifier le tout via Nginx en exposant uniquement les ports 80 et 443.
-Utiliser Cloudflare (mode proxy activé) pour avoir leur CDN et des avantages comme cache, protection DDoS, etc...
+Utiliser Cloudflare (mode proxy activé) pour avoir leur CDN et des avantages comme le cache, protection DDoS, etc...
 
 #### Endpoints disponibles
 
