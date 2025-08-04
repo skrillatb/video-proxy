@@ -2,7 +2,7 @@
 
 Petit serveur Go permettant de proxifier des fichiers MP4 ou des vidéos hébergées sur Uqload depuis un serveur distant.
 
-Utiliser un VPS disposant d’un excellent quota de bande passante (minimum 20 To) et d’au moins 40 Go de stockage.
+Utiliser un VPS disposant d’un excellent quota de bande passante sortante (minimum 20 To) et d’au moins 40 Go de stockage.
 Installer Go et Nginx si nécessaire.
 Si les ressources sont insuffisantes, prendre un autre VPS du même type et répartir le trafic entre les deux.
 
